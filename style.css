@@ -1,0 +1,1005 @@
+    :root{
+          --purple-bg: #8749c5; /* Existing medium purple, might be used in gradients */
+            --dark-bg: #39363d; /* Existing dark grey/charcoal, might be used in gradients */
+            --text-white: #f5f5f5;
+            --flashy-pink: #df38e5;
+            --wavy-purple: linear-gradient(to right, #6A0DAD 0%, #a641d8 100%); /* Existing header/modal gradient */
+            --deep-dark-purple: #1a0033; /* New very dark purple for body background */
+            --section-gradient:#111111;
+            --section-gradient2: #111111;
+            --header-wavy:linear-gradient(to right, #6A0DAD 0%, #8749c5 30% , #6A0DAD 70%, #8749c5 100%);
+
+    }
+  
+  
+  
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-white);
+           background-color: var(--deep-dark-purple); 
+            scroll-behavior:smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0; 
+            min-height: 80vh; /* Ensure sections are tall enough to scroll */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image:  linear-gradient(125deg,#6A0DAD 10%, #1a0033 60% ,#111111 100% );
+            /*margin-bottom: 20px; */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        section:nth-of-type(even) {
+            background-image: linear-gradient(145deg, #111111 50% , #6A0DAD 100% );
+        }
+
+        /* Header/Navbar Styling */
+        .header {
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent; /* Initial transparent background */
+            padding: 20px 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .header.scrolled {
+          /*  background-image: linear-gradient(to right, #1a0033 0%, #39363d 30%, #8749c5 80%,w #df38e5 100%);/* Purple background on scroll */
+            box-shadow: 0 2px 10px rgba(164, 141, 141, 0.2);
+            background-image: linear-gradient(to right,#8749c5 0%, #df38e5 50%, #8749c5 100%);
+        }
+
+        /*  #C227F0  */
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--text-white); /* White logo text */
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .header.scrolled .logo {
+            color: var(--text-white) /* Keep white on scroll */
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            color: #fff; /* White link text */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease-in-out;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header.scrolled .nav-menu a {
+            color: #fff; /* Keep white on scroll */
+        }
+
+        /* Hero Section */
+         .hero {
+            position: relative; /* Essential for positioning the video and content */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* Important to hide any overflow from the video */
+            color: #fff; /* Ensure text is visible over the video */
+            background-color: #0c0505; /* Fallback background color if video fails to load */
+            }       
+
+        #background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1; /* Place the video behind the content */
+            transform: translate(-50%, -50%); /* Center the video */
+            background-size: cover; /* Ensures the video covers the area */
+            object-fit:cover;
+        }
+
+        .hero-content {
+            position: relative; /* Make sure content is above the video */
+            z-index: 2; 
+            background: url(imgs/purplebg.mp4) no-repeat center center; 
+            background-size: cover;
+            padding: 20px; 
+            border-radius: 10px;
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 0 auto 40px;
+            max-width: 800px;
+        }
+
+           @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .btn {
+            background-color: #7F00FF; /* Tomato color for button */
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            z-index:1;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+              animation: pulse 2s infinite; /* Apply pulse animation */
+        }
+
+        .btn:hover {
+            background-color: #df38e5;
+            transform: translateY(-3px);
+            animation:none;
+        }
+
+        /* Content Reveal Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform; /* Optimize for animation */
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section Specific Styles (Placeholder Content) */
+        .section-title {
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        .section-content {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-white);
+        }
+
+        .why-us-intro-paragraph {
+            margin-bottom: 60px; /* Space below the new intro paragraph */
+            font-size: 1.3em;
+            max-width: 900px;
+            text-align: center;
+            margin:auto;
+            line-height: 1.8;
+            color: var(--text-white);
+        }
+
+        .why-us-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 30px;
+            margin-top: 60px;
+            width: 100%;
+        }
+
+        .feature-card {
+            /* Removed background-image, padding, border-radius, box-shadow, border */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out; /* Keep transition for potential hover effects on the card itself */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px); /* Keep a slight lift on hover */
+        }
+
+        .feature-card .icon {
+            font-size: 3.5em;
+             background: linear-gradient(135deg, #df38e5 0%, #8749c5 30%, #d728dd , #df38e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+            margin-bottom: 15px; /* Adjust as needed after removing padding */
+        /*    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow */
+            transform-origin: center; /* Important for rotation */
+            /* Removed transition: transform 0.5s ease-out; to prevent conflict with animation */
+        }
+
+        .feature-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            font-size: 1.2em;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
+
+        /* Counter Specific Styles */
+        .counter-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 5px;
+            display: block; /* Ensure it's on its own line */
+        }
+
+        /* Icon Rotation Animation */
+        @keyframes rotate360 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Initial rotation when .initial-rotate class is added */
+        .feature-card .icon.initial-rotate {
+            animation: rotate360 1s ease-out forwards; /* Rotate once and stay */
+        }
+
+        /* Continuous rotation on hover for all icons */
+        .feature-card .icon:hover {
+            animation: rotate360 1s linear infinite; /* Rotate continuously on hover */
+        }
+
+
+
+        
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns:  repeat(4, 1fr); /* 2 columns on larger screens */
+ 
+            gap: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+      .step-number-circle {
+            width: 70px; /* Size of the circle */
+            height: 70px;
+            border-radius: 50%; /* Makes it a circle */
+            border: 3px dashed var(--text-white); /* White dashed border */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2em; /* Size of the number */
+            font-weight: 700;
+            color: var(--text-white);
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for the circle */
+            margin-bottom: 20px; /* Space below the circle */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .roadmap-card {
+            background-image: linear-gradient(135deg, #df38e5 0%, #8749c5 30%, #d728dd , #df38e5 100%);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .roadmap-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .roadmap-card .icon {
+            font-size: 3em;
+            color: var(--text-white);
+            margin-bottom: 15px;
+            /* No rotation animation for roadmap icons */
+        }
+
+        .roadmap-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .roadmap-card p {
+            font-size: 1em;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
+
+   /* Roadmap Section Styles */
+        .roadmap-heading {
+            font-size: 2.5em;
+            margin-top: 80px; /* Space above roadmap section */
+            margin-bottom: 40px;
+            color: var(--text-white);
+            font-weight: 700;
+            display: inline-block; /* Ensure letters are inline-block for animation */
+        }
+
+        /* Roadmap Heading Letter Jump Animation */
+        @keyframes letterJump {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            25% { transform: translateY(-15px); } /* Jump up */
+            50% { transform: translateY(0); } /* Fall back */
+            75% { transform: translateY(-8px); } /* Smaller secondary bounce */
+        }
+
+      .roadmap-heading span {
+            display: inline-block; /* Each letter as an inline-block for independent animation */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.3s, transform 0.3s; /* Smooth initial reveal before animation starts */
+        }
+
+        .roadmap-heading.animate span {
+            animation: letterJump 1.5s ease-out 1 forwards; /* Play once and stay at final state */
+            /* animation-delay will be set by JS */
+        }
+
+
+
+
+
+
+
+/*     portfolio section   */
+
+      /* Portfolio Section Specific Styles */
+        .portfolio-subsection {
+            margin-top: 60px; /* Space between the main section intro and the first subsection */
+            margin-bottom: 80px; /* Space after each subsection */
+            width: 100%;
+        }
+
+        .portfolio-subsection:last-of-type {
+            margin-bottom: 0; /* No extra margin after the last subsection */
+        }
+
+        .portfolio-subsection-title {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        .portfolio-subsection-description {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 40px auto; /* Space below description */
+            color: var(--text-white);
+            opacity: 0.9;
+        }
+
+        .portfolio-grid { /* This class is now used for the sub-grids */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+            gap: 20px; /* Space between grid items */
+            width: 100%;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .portfolio-item img {
+            display: block;
+            width: 100%;
+            height: 100%; /* Fixed height for consistency */
+            object-fit: cover; /* Ensure images cover the area */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1); /* Slightly zoom the image on hover */
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(106, 13, 173, 0.8); /* Semi-transparent purple overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1; /* Show on hover */
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.95em;
+            margin-bottom: 3px;
+            color: var(--text-white);
+            opacity: 0.9;
+        }
+
+        .portfolio-overlay .arrow-btn {
+            background: none;
+            border: 2px solid var(--text-white);
+            border-radius: 50%;
+            color: var(--text-white);
+            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .portfolio-overlay .arrow-btn:hover {
+            background-color: var(--flashy-pink);
+            border-color: var(--flashy-pink);
+            color: var(--text-white);
+        }
+
+   /* Portfolio Image Modal Styles */
+        #portfolio-image-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); /* Darker overlay for images */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2500; /* Higher than service modal */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #portfolio-image-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #portfolio-image-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+            overflow: hidden; /* Hide overflow if image is slightly larger than content box */
+            transform: scale(0.8); /* Start smaller for animation */
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        #portfolio-image-modal-overlay.active #portfolio-image-modal-content {
+            transform: scale(1); /* Scale to original size */
+            opacity: 1;
+        }
+
+        #portfolio-enlarged-img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            border-radius: 10px; /* Match modal content border-radius */
+        }
+
+        #close-portfolio-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2.5em;
+            color: var(--purple-bg);
+            cursor: pointer;
+            z-index: 2501; /* Ensure close button is on top */
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        #close-portfolio-modal:hover {
+            transform: rotate(90deg);
+            color: var(--flashy-pink);
+        }
+
+
+
+        
+        /* Services Section Card Hover Effect */
+        .services-grid-item {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer; /* Indicate clickability */
+            width: 30%; 
+            min-width: 250px; 
+            margin: 15px; 
+            padding: 20px; 
+            background-image:linear-gradient(135deg, #df38e5 0%, #8749c5 30%, #d728dd , #df38e5 100%); 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .services-grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+    
+            /* Service Modal Styles */
+        #service-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* Ensure it's above everything else */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        #service-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #service-modal-content {
+            background-image: var(--wavy-purple);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh; /* Limit height for scrollability */
+            overflow-y: auto; /* Enable scrolling for long lists */
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            color: var(--text-white);
+            transform: translateY(-20px); /* Start slightly above for animation */
+            opacity: 0; /* Initial state for content */
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        #service-modal-overlay.active #service-modal-content {
+            transform: translateY(0); /* Move to original position */
+            opacity: 1; /* Fade in */
+        }
+
+        #close-service-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2.5em;
+            color: var(--text-white);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        #close-service-modal:hover {
+            transform: rotate(90deg);
+            color: var(--flashy-pink);
+        }
+
+        #modal-title {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-white);
+        }
+
+        #modal-subservices-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-left: 20px; /* Indent list items */
+        }
+
+        #modal-subservices-list li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            line-height: 1.5;
+        }
+
+        #modal-subservices-list li::before {
+            content: '\2022'; /* Unicode for a bullet point */
+            color: var(--flashy-pink); /* Pink bullet */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+
+
+
+ .contact-layout-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            gap: 4rem; /* Space between columns */
+            margin-top: 50px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            width: 100%; /* Ensure it takes full width of container */
+        }
+
+        .contact-options-column {
+            display: flex;
+            flex-direction: column; /* Stack cards vertically */
+            gap: 20px; /* Space between the two cards */
+            flex: 0 0 350; /* Allow column to grow/shrink */
+            min-width: 300px; /* Minimum width for the column */
+            max-width: 45%; /* Max width to allow for two columns */
+            align-items: center; /* Center cards within their column */
+        }
+
+        .contact-form-column {
+            flex: 1; /* Allow column to grow/shrink */
+            min-width: 50%; /* Minimum width for the column */
+            max-width: 100%; /* Max width to allow for two columns */
+        }
+
+
+
+     
+        .contact-form-wrapper {
+            width: 100%; 
+            max-width: 80%; 
+            margin-left: auto; 
+            margin-right: auto;          
+            transition: all 0.3s ease-in-out; /* transition-all duration-300 ease-in-out */
+            margin-bottom: 3rem; 
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            border-radius: 2rem;
+            gap: 1.5rem; 
+            padding:2rem;
+            width:100%;
+            box-shadow: 5px 5px 10px -1px var(--text-white); 
+            background-image:
+            linear-gradient(
+                135deg,
+                rgba(223, 56, 229, 0.6) 0%, 
+                rgba(135, 73, 197, 0.6) 30%, 
+                rgba(215, 40, 221, 0.6), 
+                rgba(223, 56, 229, 0.6) 100%
+            );
+        }
+
+        .form-label {
+            display: block; 
+            text-align: left; 
+            font-size: 1.2rem; 
+            font-weight: 500;
+            margin-bottom: 0.5rem; 
+        }
+
+        .form-input-field {
+            width: 100%;
+            font-size: 18px;
+            color:black;
+            padding: 0.75rem; 
+            border-radius: 0.375rem; 
+            background-color:rgba(255, 255, 255, 0.99); 
+            border: 1px solid #646f7e;
+            outline: none; 
+            transition: all 0.2s ease-in-out;
+        }
+
+        .form-input-field:focus {
+            border-color: var(--flashy-color); 
+            box-shadow: 0 0 0 2px var(--flashy-color); 
+        }
+
+        .form-submit-button {
+            width: 50%;
+            padding: 1rem 2rem; 
+            font-size: 1.125rem;
+            margin:auto;
+            font-weight: 600;
+            border-radius: 9999px; 
+            background-image:linear-gradient(
+                135deg,
+                rgba(223, 56, 229, 0.6) 0%, 
+                rgba(135, 73, 197, 0.6) 30%, 
+                rgba(215, 40, 221, 0.6), 
+                rgba(223, 56, 229, 0.6) 100%); 
+            color:#fff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+        }
+
+        .form-submit-button:hover {
+            transform: translateY(-2px);
+            color:var(--flashy-pink);
+            background-image: var(--text-whit);
+            box-shadow: 0 8px 15px rgba(250, 248, 252, 0);
+        }
+
+
+      .contact-options-wrapper {
+            display: flex;
+            flex-direction:column;
+            justify-content: center; 
+            align-items: center; 
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 80%; 
+            margin-top: 100px;
+            margin-left: auto; 
+            margin-right: auto; 
+            margin-bottom: 20px;
+        }
+  
+        .contact-option-card {
+            flex: 1; 
+            width: 90%; 
+            padding: 1.5rem; 
+            border-radius: 0.75rem; 
+            box-shadow:  -2px 0px 10px var(--text-white); 
+            background-image: linear-gradient(135deg, #df38e5 0%, #8749c5 30%, #d728dd , #df38e5 100%);
+            border: 1px solid ; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            transition: all 0.3s ease-in-out; 
+            text-decoration: none;  
+            color: inherit; 
+             margin-bottom: 20px;
+        }
+
+        .contact-option-card:hover {
+            border-color: var(--flashy-color); 
+            box-shadow: 0 10px 20px var(--text-white); 
+            transform: translate3d(10px, 10px, 20px);
+        }
+
+        
+          .contact-option-icon {
+            font-size: 3rem !important; 
+            color:linear-gradient(90deg, var(--flashy-color) 0%, #7e269e 100%); 
+            margin-bottom: 1rem;
+            
+        }
+
+        .contact-option-text {
+            font-size: 1.25rem;
+            font-weight: 600;   
+        }
+
+
+    
+
+
+
+
+    /* Responsive Design */
+        @media (max-width: 992px) { /* Adjust breakpoint for feature grid */
+            .why-us-features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .roadmap-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for 2 columns on smaller desktops/tablets */
+            }
+
+               .nav-menu li {
+                margin-left: 20px; /* Slightly less margin for smaller screens */
+            }
+            .nav-menu a {
+                font-size: 1em; /* Slightly smaller font size */
+            }
+
+                .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+            }
+        }
+
+
+
+
+
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+          
+            .header .container {
+                flex-direction: column; /* Stack logo and nav vertically */
+                align-items: center;
+            }
+
+            .logo {
+                margin-bottom: 10px; /* Space below logo when stacked */
+                margin-right: 0;
+            }
+
+            .nav-menu {
+                width: 100%; /* Take full width */
+                justify-content: center; /* Center links horizontally */
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .nav-menu li {
+                margin: 0 15px; /* Adjust horizontal margin for stacked links */
+                padding: 5px 0; /* Add vertical padding for touch targets */
+            }
+
+            .nav-menu a {
+                font-size: 0.95em; /* Further reduce font size */
+            }
+
+               .roadmap-grid {
+                grid-template-columns: 1fr; /* Stack roadmap cards on very small screens */
+            }
+
+              .form-submit-button {
+                width: 80%; /* Make submit button wider on small screens */
+            }
+             .portfolio-grid {
+                grid-template-columns: 1fr; /* 1 column on mobile */
+            }
+
+            .portfolio-subsection {
+            font-size:0.3rem;
+            width: 100%;
+            height:100%;
+        }
+
+          .portfolio-overlay .arrow-btn {
+            border: 1px solid var(--text-white);
+            width: 15px;
+            height: 15px;
+          
+        }
+
+
+
+
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .roadmap-heading{
+                font-size: 24px;
+            }
+
+              .nav-menu li {
+                margin: 0 10px; /* Even tighter spacing for very small screens */
+            }
+
+
+            
+        }
+
+        @media (max-width: 1200px) { /* Adjust for 3 columns on slightly smaller large screens */
+             .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        
