@@ -138,6 +138,11 @@
             overflow: hidden; /* Important to hide any overflow from the video */
             color: #fff; /* Ensure text is visible over the video */
             background-color: #0c0505; /* Fallback background color if video fails to load */
+
+             
+                 background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
             }       
 
         #background-video {
@@ -148,9 +153,9 @@
             min-height: 100%;
             width: auto;
             height: auto;
-            z-index: 1; /* Place the video behind the content */
+            z-index: -1; /* Place the video behind the content */
             transform: translate(-50%, -50%); /* Center the video */
-            background-size: cover; /* Ensures the video covers the area */
+            
             object-fit:cover;
         }
 
