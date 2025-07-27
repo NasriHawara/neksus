@@ -73,7 +73,7 @@
             // Data for portfolio items (for image modal and dynamic loading)
             const portfolioData = {
                 project1: {
-                    image: '/neksus-12.png',
+                    image: 'imgs/neksus-12.png',
                     enlargedImage: '/neksus-12.png',
                     title: "E-commerce Redesign",
                     department: "Development",
