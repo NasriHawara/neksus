@@ -131,11 +131,12 @@
          .hero {
             position: relative; /* Essential for positioning the video and content */
             height: 100vh; /* Full viewport height */
+            height: -webkit-fill-available; /* iOS fallback */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            overflow: hidden; /* Important to hide any overflow from the video */
+         /*   overflow: hidden; /* Important to hide any overflow from the video */
             color: #fff; /* Ensure text is visible over the video */
             background-color: #0c0505; /* Fallback background color if video fails to load */
             }       
@@ -148,11 +149,7 @@
     height: 100%;
     object-fit: cover;
     z-index: 0; /* was 1 */
-
-
-              -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  will-change: transform;
+      -webkit-transform: translate3d(0,0,0);
   backface-visibility: hidden;
         }
 
