@@ -129,7 +129,6 @@
 
         /* Hero Section */
          .hero {
-                     background: url(imgs/purplebg.mp4) no-repeat center center; 
             position: relative; /* Essential for positioning the video and content */
             height: 100vh; /* Full viewport height */
             display: flex;
@@ -160,7 +159,7 @@
         .hero-content {
             position: relative; /* Make sure content is above the video */
             z-index: 1; 
-
+             background: url(imgs/purplebg.mp4) no-repeat; 
             /*    background-size: cover;*/
             padding: 20px; 
             
