@@ -73,89 +73,104 @@
             // Data for portfolio items (for image modal and dynamic loading)
             const portfolioData = {
                 project1: {
-                    image: 'imgs/neksus-12.png',
+                    image: '/neksus-12.png',
                     enlargedImage: '/neksus-12.png',
-                    title: "E-commerce Redesign",
+                    title: "Portfolio Website",
                     department: "Development",
-                    type: "Web Design"
+                    type: "Website Design"
                 },
-                project2: {
-                    image: 'imgs/neksus-06.png',
-                    enlargedImage: 'imgs/neksus-06.png',
-                    title: "Brand Identity Kit",
-                    department: "Development",
-                    type: "Graphic Design"
-                },
+             
 
                      project3: {
                     image: 'imgs/neksus-13.png',
                     enlargedImage: 'imgs/neksus-13.png',
                     title: "Data analysis",
                     department: "Development",
-                    type: "Content Creation"
+                    type: "Business Analysis"
                 },
                      project4: {
                     image: 'imgs/neksus-14.png',
                     enlargedImage: 'imgs/neksus-14.png',
                     title: "DATA ANALYSIS",
                     department: "Development",
-                    type: "Content Creation"
+                    type: "Business Analysis"
                 },
                 project5: {
                     image: 'imgs/neksus-15.png',
                     enlargedImage: 'imgs/neksus-15.png',
-                    title: "Social Media Campaign",
+                    title: "Quotely",
                     department: "Development",
-                    type: "Digital Marketing"
+                    type: "Website Development"
+                },
+                   project2: {
+                    image: 'imgs/neksus-06.png',
+                    enlargedImage: 'imgs/neksus-06.png',
+                    title: "Portfolio Website",
+                    department: "Development",
+                    type: "Website Development"
                 },
                 project6: {
                     image: 'imgs/neksus-16.png',
                     enlargedImage: 'imgs/neksus-16.png',
-                    title: "Mobile App UI/UX",
+                    title: "Beauty Lounge Website",
                     department: "Development",
-                    type: "UI/UX Design"
+                    type: "Website Development"
                 },
                 project7: {
                     image: 'imgs/neksus-08.png',
                     enlargedImage: 'imgs/neksus-08.png',
                     title: "Heatwave Flyer",
                     department: "Design",
-                    type: "Flyer"
+                    type: "Marketing"
                 },
                 project8: {
                     image: 'imgs/neksus-10.png',
                     enlargedImage: 'imgs/neksus-10.png',
                     title: "Exhibition Stand",
                     department: "Design",
-                    type: "Content Creation"
+                    type: "Exhibition Stand"
                 },
                    project9: {
                     image: 'imgs/neksus-09.png',
                     enlargedImage: 'imgs/neksus-09.png',
                     title: "Flyer",
                     department: "Design",
-                    type: "Content Creation"
+                    type: "Marketing"
                 },
                    project10: {
                     image: 'imgs/neksus-11.png',
                     enlargedImage: 'imgs/neksus-11.png',
                     title: "Exhibition Stand",
                     department: "Design",
-                    type: "Content Creation"
+                    type: "Exhibition Stand"
                 },
                      project11: {
                     image: 'imgs/neksus-17.png',
                     enlargedImage: 'imgs/neksus-17.png',
                     title: "Logo",
                     department: "Design",
-                    type: "Content Creation"
+                    type: "Branding"
                 },
                      project12: {
                     image: 'imgs/neksus-18.png',
                     enlargedImage: 'imgs/neksus-18.png',
                     title: "LOGO",
                     department: "Design",
-                    type: "Content Creation"
+                    type: "Branding"
+                },
+                  project13: {
+                    image: 'imgs/neksus-20.png',
+                    enlargedImage: 'imgs/neksus-20.png',
+                    title: "PilaVee",
+                    department: "Development",
+                    type: "Website Development"
+                },
+                  project14: {
+                    image: 'imgs/neksus-19.png',
+                    enlargedImage: 'imgs/neksus-19.png',
+                    title: "Ru2ya",
+                    department: "Development",
+                    type: "Website Development"
                 }
             };
 
@@ -349,3 +364,4 @@
                 }
             });
         });
+
