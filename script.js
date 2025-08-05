@@ -159,14 +159,14 @@
                     type: "Branding"
                 },
                   project13: {
-                    image: 'imgs/neksus-20.png',
+                    image: 'imgs/Neksus-20.png',
                     enlargedImage: 'imgs/Neksus-20.png',
                     title: "PilaVee",
                     department: "Development",
                     type: "Website Development"
                 },
                   project14: {
-                    image: 'imgs/neksus-19.png',
+                    image: 'imgs/Neksus-19.png',
                     enlargedImage: 'imgs/Neksus-19.png',
                     title: "Ru2ya",
                     department: "Development",
@@ -364,5 +364,6 @@
                 }
             });
         });
+
 
 
