@@ -181,7 +181,7 @@
                 portfolioItemDiv.setAttribute('data-project-id', projectId);
 
                 portfolioItemDiv.innerHTML = `
-                    <img src="${project.image}" alt="${project.title}">
+                    <img src="${project.image}" alt="Neksus ${project.department} project: ${project.title} in Lebanon">
                     <div class="portfolio-overlay">
                         <h3>${project.title}</h3>
                         <p>Department: ${project.department}</p>
@@ -364,6 +364,7 @@
                 }
             });
         });
+
 
 
 
