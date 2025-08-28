@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nasrihawara.dev/sitemap.xml
+Sitemap: https://neksusteam.com/sitemap.xml
