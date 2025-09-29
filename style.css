@@ -19,6 +19,11 @@
             box-sizing: border-box;
         }
 
+
+        html {
+        scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -1011,3 +1016,4 @@
         }
 
         
+
