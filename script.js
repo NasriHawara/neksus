@@ -164,13 +164,6 @@
                     title: "PilaVee",
                     department: "Development",
                     type: "Website Development"
-                },
-                  project14: {
-                    image: 'imgs/Neksus-19.png',
-                    enlargedImage: 'imgs/Neksus-19.png',
-                    title: "Ru2ya",
-                    department: "Development",
-                    type: "Website Development"
                 }
             };
 
@@ -364,6 +357,7 @@
                 }
             });
         });
+
 
 
 
