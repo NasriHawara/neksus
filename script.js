@@ -77,7 +77,8 @@
                     enlargedImage: '/neksus-12.png',
                     title: "Portfolio Website",
                     department: "Development",
-                    type: "Website Design"
+                    type: "Website Design",
+        lazy: true 
                 },
              
 
@@ -86,84 +87,96 @@
                     enlargedImage: 'imgs/neksus-13.png',
                     title: "Data analysis",
                     department: "Development",
-                    type: "Business Analysis"
+                    type: "Business Analysis",
+        lazy: true 
                 },
                      project4: {
                     image: 'imgs/neksus-14.png',
                     enlargedImage: 'imgs/neksus-14.png',
                     title: "DATA ANALYSIS",
                     department: "Development",
-                    type: "Business Analysis"
+                    type: "Business Analysis",
+        lazy: true 
                 },
                 project5: {
                     image: 'imgs/neksus-15.png',
                     enlargedImage: 'imgs/neksus-15.png',
                     title: "Quotely",
                     department: "Development",
-                    type: "Website Development"
+                    type: "Website Development",
+        lazy: true 
                 },
                    project2: {
                     image: 'imgs/neksus-06.png',
                     enlargedImage: 'imgs/neksus-06.png',
                     title: "Portfolio Website",
                     department: "Development",
-                    type: "Website Development"
+                    type: "Website Development",
+        lazy: true 
                 },
                 project6: {
                     image: 'imgs/neksus-16.png',
                     enlargedImage: 'imgs/neksus-16.png',
                     title: "Beauty Lounge Website",
                     department: "Development",
-                    type: "Website Development"
+                    type: "Website Development",
+        lazy: true 
                 },
                 project7: {
                     image: 'imgs/neksus-08.png',
                     enlargedImage: 'imgs/neksus-08.png',
                     title: "Heatwave Flyer",
                     department: "Design",
-                    type: "Marketing"
+                    type: "Marketing",
+        lazy: true 
                 },
                 project8: {
                     image: 'imgs/neksus-10.png',
                     enlargedImage: 'imgs/neksus-10.png',
                     title: "Exhibition Stand",
                     department: "Design",
-                    type: "Exhibition Stand"
+                    type: "Exhibition Stand",
+        lazy: true 
                 },
                    project9: {
                     image: 'imgs/neksus-09.png',
                     enlargedImage: 'imgs/neksus-09.png',
                     title: "Flyer",
                     department: "Design",
-                    type: "Marketing"
+                    type: "Marketing",
+        lazy: true 
                 },
                    project10: {
                     image: 'imgs/neksus-11.png',
                     enlargedImage: 'imgs/neksus-11.png',
                     title: "Exhibition Stand",
                     department: "Design",
-                    type: "Exhibition Stand"
+                    type: "Exhibition Stand",
+        lazy: true 
                 },
                      project11: {
                     image: 'imgs/neksus-17.png',
                     enlargedImage: 'imgs/neksus-17.png',
                     title: "Logo",
                     department: "Design",
-                    type: "Branding"
+                    type: "Branding",
+        lazy: true 
                 },
                      project12: {
                     image: 'imgs/neksus-18.png',
                     enlargedImage: 'imgs/neksus-18.png',
                     title: "LOGO",
                     department: "Design",
-                    type: "Branding"
+                    type: "Branding",
+        lazy: true 
                 },
                   project13: {
                     image: 'imgs/Neksus-20.png',
                     enlargedImage: 'imgs/Neksus-20.png',
                     title: "PilaVee",
                     department: "Development",
-                    type: "Website Development"
+                    type: "Website Development",
+        lazy: true 
                 }
             };
 
@@ -174,7 +187,8 @@
                 portfolioItemDiv.setAttribute('data-project-id', projectId);
 
                 portfolioItemDiv.innerHTML = `
-                    <img src="${project.image}" alt="${project.title} by Neksus Team — ${project.type} (${project.department}, Lebanon)">
+                    <img src="${project.image}" alt="${project.title} by Neksus Team — ${project.type} (${project.department}, Lebanon)"
+                    ${project.lazy ? 'loading="lazy"' : ''}>
                     <div class="portfolio-overlay">
                         <h3>${project.title}</h3>
                         <p>Department: ${project.department}</p>
@@ -357,6 +371,7 @@
                 }
             });
         });
+
 
 
 
