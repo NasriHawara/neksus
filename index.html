@@ -10,11 +10,20 @@
     
     <title>NeksusTeam | Digital Marketing, Development & Design Agency in Lebanon</title>
    
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Preload critical CSS -->
+<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
+
+<!-- Preload critical fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- Preload Font Awesome -->
+<link rel="preload" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- Defer non-critical JS -->
+<script defer src="script.js"></script>
 </head>
 <body>
     <header class="header">
@@ -34,7 +43,7 @@
 
     <section id="hero" class="hero">
         <video autoplay muted loop playsinline webkit-playsinline x-webkit-airplay="allow" disableremoteplayback id="background-video">
-        <source src="imgs/purplebg.mp4" type="video/mp4">
+        <source src="imgs/purplebgc.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -289,6 +298,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
