@@ -1,8 +1,4 @@
-// OPTIMIZED & SECURE JAVASCRIPT
-// Performance, Security & Accessibility Enhanced
-// ========================================
-
-// Configuration
+// ========================================// Configuration
 const CONFIG = {
     DEBUG: false, // Set to false in production
     TESTIMONIAL_AUTOPLAY_DELAY: 5000,
@@ -252,7 +248,7 @@ function initializeScrollAnimations() {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
                 
-                // Add staggered animation for grid items
+                // staggered animation for grid items
                 const animateChildren = (selector, delay) => {
                     const items = entry.target.querySelectorAll(selector);
                     items.forEach((item, index) => {
@@ -435,7 +431,7 @@ function initializeFAQ() {
         if (question) question.setAttribute('aria-expanded', 'false');
     });
     
-    // Add click and keyboard events
+    // click and keyboard events
     faqItems.forEach((item) => {
         const question = item.querySelector('.faq-question');
         if (!question) return;
@@ -479,7 +475,7 @@ const ModalSystem = {
     activeModal: null,
     
     init() {
-        // Use event delegation for modal triggers
+        // event delegation for modal triggers
         document.addEventListener('click', (e) => {
             const modalTrigger = e.target.closest('[data-modal]');
             if (modalTrigger) {
@@ -554,7 +550,7 @@ function initializeContactForm() {
     
     if (!DOM.contactForm) return;
     
-    // Add honeypot field for spam protection
+    // honeypot field for spam protection
     addHoneypotField();
     
     // Real-time validation
@@ -631,7 +627,7 @@ function validateField(e) {
         }
     }
     
-    // Name validation (if you have a name field)
+    // Name validation 
     if (field.type === 'text' && field.name === 'name' && value) {
         if (value.length < 2) {
             isValid = false;
@@ -710,7 +706,7 @@ function submitContactForm(formData) {
     submitButton.disabled = true;
     submitButton.style.opacity = '0.7';
     
-    // Send to Formspree - REPLACE 'your-form-id' WITH YOUR ACTUAL FORMSPREE ID
+    // Send to Formspree
     fetch('https://formspree.io/f/mnnzdegq', {
         method: 'POST',
         headers: {
@@ -797,7 +793,7 @@ function showNotification(message, type = 'info') {
 // ANIMATIONS
 // ========================================
 function initializeAnimations() {
-    // Add hover effects for interactive elements
+    // hover effects for interactive elements
     const interactiveElements = document.querySelectorAll('.service-card, .project-card, .feature-item');
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
@@ -943,3 +939,4 @@ document.addEventListener('visibilitychange', function() {
         Utils.log('Page visible - resuming animations');
     }
 });
+
